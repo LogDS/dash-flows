@@ -1,5 +1,5 @@
 {
-  "name": "df_nw",
+  "name": "dash_flows",
   "version": "0.0.4",
   "description": "React Flow for the Plotly Dash framework with edittable handles.",
 "repository": {
