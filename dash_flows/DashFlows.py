@@ -32,6 +32,16 @@ Keyword arguments:
 
     - style (dict; optional)
 
+    - markerEnd (dict; optional)
+
+        `markerEnd` is a dict with keys:
+
+        - type (string; required)
+
+        - color (string; optional)
+
+        - size (number; optional)
+
 - elementsSelectable (boolean; default True):
     Enable/disable the ability to select elements.
 

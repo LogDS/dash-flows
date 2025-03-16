@@ -1,9 +1,10 @@
-// ResizableNode.js
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Handle, Position, NodeResizer } from '@xyflow/react';
 
 const ResizableNode = memo(({ data, selected }) => {
+    console.log('Data initial:', data);
+    console.log('Selected initial:', selected);
     const renderDashComponent = (component) => {
         if (!component) return null;
         if (typeof component === 'string') return component;
@@ -92,6 +93,44 @@ const ResizableNode = memo(({ data, selected }) => {
         return null;
     };
 
+    const processHandleProps = (handles) => {
+        console.log('input data',handles); // Log input handles
+
+        const processedHandles = handles.map(handle => {
+            const {
+                id,
+                type,
+                position,
+                style,
+                isConnectable,
+                isConnectableStart,
+                isConnectableEnd,
+                onConnect,
+                isValidConnection
+            } = handle;
+    
+            // Convert position from string to Position enum if possible
+            let processedPosition = position;
+    
+            return {
+                id:id,
+                type:type,
+                position: processedPosition,
+                style: style,
+                isConnectable: isConnectable,
+                isConnectableStart: isConnectableStart,
+                isConnectableEnd: isConnectableEnd,
+                onConnect: onConnect,
+                isValidConnection: isValidConnection
+            };
+        });
+
+        console.log('Processed handles:', processedHandles); // Log processed handles
+        return processedHandles;
+    };
+
+    const processedHandles = processHandleProps(data.handles);
+
     return (
         <div className="resizable-node" style={{
             width: '100%',
@@ -100,7 +139,7 @@ const ResizableNode = memo(({ data, selected }) => {
             borderRadius: '4px',
             position: 'relative',
             background: '#fff',
-            overflow: 'hidden'
+            overflow: 'visible'  // Change overflow to visible
         }}>
             <NodeResizer
                 isVisible={selected}
@@ -109,11 +148,20 @@ const ResizableNode = memo(({ data, selected }) => {
                 handleStyle={{ width: 8, height: 8 }}
                 lineStyle={{ borderWidth: 1 }}
             />
-            <Handle
-                type="target"
-                position={Position.Top}
-                style={{ background: '#555' }}
-            />
+            {processedHandles.map((handle, index) => (
+                <Handle
+                    key={index}
+                    type={handle.type}
+                    position={handle.position}
+                    id={handle.id}
+                    style={handle.style}
+                    isConnectable={handle.isConnectable}
+                    isConnectableStart={handle.isConnectableStart}
+                    isConnectableEnd={handle.isConnectableEnd}
+                    onConnect={handle.onConnect}
+                    isValidConnection={handle.isValidConnection}
+                />
+            ))}
             <div style={{
                 padding: 10,
                 width: '100%',
@@ -125,11 +173,6 @@ const ResizableNode = memo(({ data, selected }) => {
             }}>
                 {data.label && renderDashComponent(data.label)}
             </div>
-            <Handle
-                type="source"
-                position={Position.Bottom}
-                style={{ background: '#555' }}
-            />
         </div>
     );
 });
@@ -138,7 +181,18 @@ ResizableNode.displayName = 'ResizableNode';
 
 ResizableNode.propTypes = {
     data: PropTypes.shape({
-        label: PropTypes.any
+        label: PropTypes.any,
+        handles: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+            position: PropTypes.string.isRequired,
+            style: PropTypes.object,
+            isConnectable: PropTypes.bool,
+            isConnectableStart: PropTypes.bool,
+            isConnectableEnd: PropTypes.bool,
+            onConnect: PropTypes.func,
+            isValidConnection: PropTypes.func
+        })).isRequired
     }).isRequired,
     selected: PropTypes.bool
 };
@@ -147,4 +201,4 @@ ResizableNode.defaultProps = {
     selected: false
 };
 
-export default ResizableNode
+export default ResizableNode;

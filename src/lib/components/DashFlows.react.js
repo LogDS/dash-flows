@@ -1,5 +1,5 @@
 // DashFlow.react.js
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, } from 'react';
 import PropTypes from 'prop-types';
 import {
     ReactFlow,
@@ -10,6 +10,7 @@ import {
     useNodesState,
     useEdgesState,
     useViewport,
+    MarkerType,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import ELK from 'elkjs/lib/elk.bundled.js';
@@ -46,7 +47,8 @@ const processDashComponents = (nodes) => {
             const processedChildren = Array.isArray(layout.props.children)
                 ? layout.props.children.map(processComponent)
                 : layout.props.children ? processComponent(layout.props.children) : null;
-
+            console.log('Processed children (dash):', processedChildren);
+            console.log('Component type(dash):', layout.type);
             return {
                 props: {
                     _dashprivate_layout: {
@@ -65,7 +67,8 @@ const processDashComponents = (nodes) => {
             const processedChildren = Array.isArray(component.props.children)
                 ? component.props.children.map(processComponent)
                 : component.props.children ? processComponent(component.props.children) : null;
-
+            console.log('Processed children (react):', component.props);
+            console.log('Component props(react):', component.type);
             return {
                 type: component.type,
                 props: {
@@ -176,12 +179,13 @@ const FlowWithProvider = (props) => {
     }, [edges]);
 
     const onConnect = useCallback((params) => {
-        const newEdge = { ...params, id: `e${params.source}-${params.target}` };
+        const newEdge = { ...params, id: `e${params.source}-${params.target}`, style: { strokeWidth: 2, stroke: '#555' }, markerEnd: { type: MarkerType.ArrowClosed, color: '#555', size: 8 } };
         setEdges((eds) => [...eds, newEdge]);
         props.setProps({ edges: [...edges, newEdge] });
     }, [edges, setEdges]);
 
     const processedNodes = useMemo(() => processDashComponents(nodes), [nodes]);
+    console.log('Edges:', edges);
 
     return (
         <div style={{ width: '100%', height: '600px', ...props.style }}>
@@ -291,7 +295,13 @@ DashFlow.propTypes = {
         target: PropTypes.string.isRequired,
         type: PropTypes.string,
         data: PropTypes.object,
-        style: PropTypes.object
+        style: PropTypes.object,
+        markerEnd: PropTypes.shape({
+            type: PropTypes.string.isRequired,
+            color: PropTypes.string,
+            size: PropTypes.number,
+        }
+        ),
     })),
 
     /**

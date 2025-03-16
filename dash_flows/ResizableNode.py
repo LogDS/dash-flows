@@ -15,6 +15,28 @@ Keyword arguments:
 
     - label (boolean | number | string | dict | list; optional)
 
+    - handles (list of dicts; required)
+
+        `handles` is a list of dicts with keys:
+
+        - id (string; required)
+
+        - type (string; required)
+
+        - position (string; required)
+
+        - style (dict; optional)
+
+        - isConnectable (boolean; optional)
+
+        - isConnectableStart (boolean; optional)
+
+        - isConnectableEnd (boolean; optional)
+
+        - onConnect (optional)
+
+        - isValidConnection (optional)
+
 - selected (boolean; default False)"""
     _children_props = []
     _base_nodes = ['children']
