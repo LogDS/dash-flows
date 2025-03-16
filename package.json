@@ -1,15 +1,15 @@
 {
-  "name": "dash_flows",
-  "version": "0.0.3",
-  "description": "React Flow for the Plotly Dash framework.",
+  "name": "df_nw",
+  "version": "0.0.4",
+  "description": "React Flow for the Plotly Dash framework with edittable handles.",
 "repository": {
     "type": "git",
-    "url": "git://github.com/pip-install-python/dash-flows.git"
+    "url": "git://https://github.com/nikoliwilliams32/dash-flows.git"
   },
   "bugs": {
-    "url": "https://github.com/pip-install-python/dash-flows/issues"
+    "url": "https://https://github.com/nikoliwilliams32/dash-flows/issues"
   },
-  "homepage": "https://github.com/pip-install-python/dash-flows",
+  "homepage": "https://https://github.com/nikoliwilliams32/dash-flows",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack serve --config ./webpack.serve.config.js --open",
@@ -21,7 +21,7 @@
     "build": "npm run build:js && npm run build:backends",
     "build:activated": "npm run build:js && npm run build:backends-activated"
   },
-  "author": "Pip Install Python <pipinstallpython@gmail.com>",
+  "author": "Grognik <nikwilliams@duck.com>",
   "license": "MIT",
   "dependencies": {
     "@xyflow/react": "^12.3.5",
