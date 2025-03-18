@@ -1,6 +1,6 @@
 {
   "name": "dash_flows",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React Flow for the Plotly Dash framework.",
 "repository": {
     "type": "git",

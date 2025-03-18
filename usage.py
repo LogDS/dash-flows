@@ -2,6 +2,7 @@ import dash
 from dash import html, Input, Output, State, clientside_callback, _dash_renderer, dcc
 import dash_flows
 import dash_mantine_components as dmc
+import json
 
 _dash_renderer._set_react_version("18.2.0")
 
@@ -190,8 +191,30 @@ app.layout = dmc.MantineProvider(
         ),
         # Hidden div for storing layout options
         html.Div(id="layout-options", style={"display": "none"}),
+        # Store component to hold nodes data
+        dcc.Store(id="nodes-store", data=initial_nodes),
+        # Preformatted text to display nodes data as JSON
+        html.Pre(id="nodes-json", style={"whiteSpace": "pre-wrap", "wordBreak": "break-all"}),
     ]
 )
+
+@app.callback(
+    Output("nodes-store", "data"),
+    Input("react-flow-example", "nodes"),
+    prevent_initial_call=True,
+)
+def update_nodes_store(nodes):
+    return nodes
+
+
+# Callback to update the nodes JSON display
+@app.callback(
+    Output("nodes-json", "children"),
+    Input("nodes-store", "data")
+)
+def update_nodes_json(nodes_data):
+    return json.dumps(nodes_data, indent=2)
+
 
 # Create a clientside callback to handle layout changes
 app.clientside_callback(
