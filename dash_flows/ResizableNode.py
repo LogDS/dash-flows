@@ -1,6 +1,13 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+import numbers # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+try:
+    from dash.development.base_component import ComponentType # noqa: F401
+except ImportError:
+    ComponentType = typing.TypeVar("ComponentType", bound=Component)
 
 
 class ResizableNode(Component):
@@ -42,8 +49,36 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_flows'
     _type = 'ResizableNode'
+    DataHandles = TypedDict(
+        "DataHandles",
+            {
+            "id": str,
+            "type": str,
+            "position": str,
+            "style": NotRequired[dict],
+            "isConnectable": NotRequired[bool],
+            "isConnectableStart": NotRequired[bool],
+            "isConnectableEnd": NotRequired[bool],
+            "onConnect": NotRequired[typing.Any],
+            "isValidConnection": NotRequired[typing.Any]
+        }
+    )
+
+    Data = TypedDict(
+        "Data",
+            {
+            "label": NotRequired[typing.Any],
+            "handles": typing.Sequence["DataHandles"]
+        }
+    )
+
     @_explicitize_args
-    def __init__(self, data=Component.REQUIRED, selected=Component.UNDEFINED, **kwargs):
+    def __init__(
+        self,
+        data: typing.Optional["Data"] = None,
+        selected: typing.Optional[bool] = None,
+        **kwargs
+    ):
         self._prop_names = ['data', 'selected']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['data', 'selected']

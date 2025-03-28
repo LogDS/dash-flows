@@ -1,6 +1,13 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+import numbers # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+try:
+    from dash.development.base_component import ComponentType # noqa: F401
+except ImportError:
+    ComponentType = typing.TypeVar("ComponentType", bound=Component)
 
 
 class DashFlows(Component):
@@ -85,16 +92,70 @@ Keyword arguments:
     Show/hide the developer tools panel.
 
 - showMiniMap (boolean; default True):
-    Show/hide the minimap navigation component.
-
-- style (dict; optional):
-    Custom CSS styles for the container div."""
+    Show/hide the minimap navigation component."""
     _children_props = []
     _base_nodes = ['children']
     _namespace = 'dash_flows'
     _type = 'DashFlows'
+    NodesPosition = TypedDict(
+        "NodesPosition",
+            {
+            "x": typing.Union[int, float, numbers.Number],
+            "y": typing.Union[int, float, numbers.Number]
+        }
+    )
+
+    Nodes = TypedDict(
+        "Nodes",
+            {
+            "id": str,
+            "type": NotRequired[str],
+            "data": dict,
+            "position": "NodesPosition",
+            "style": NotRequired[dict]
+        }
+    )
+
+    EdgesMarkerEnd = TypedDict(
+        "EdgesMarkerEnd",
+            {
+            "type": str,
+            "color": NotRequired[str],
+            "size": NotRequired[typing.Union[int, float, numbers.Number]]
+        }
+    )
+
+    Edges = TypedDict(
+        "Edges",
+            {
+            "id": str,
+            "source": str,
+            "target": str,
+            "type": NotRequired[str],
+            "data": NotRequired[dict],
+            "style": NotRequired[dict],
+            "markerEnd": NotRequired["EdgesMarkerEnd"]
+        }
+    )
+
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, nodesDraggable=Component.UNDEFINED, nodesConnectable=Component.UNDEFINED, elementsSelectable=Component.UNDEFINED, showMiniMap=Component.UNDEFINED, showControls=Component.UNDEFINED, showBackground=Component.UNDEFINED, nodes=Component.UNDEFINED, edges=Component.UNDEFINED, style=Component.UNDEFINED, className=Component.UNDEFINED, showDevTools=Component.UNDEFINED, layoutOptions=Component.UNDEFINED, **kwargs):
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        nodesDraggable: typing.Optional[bool] = None,
+        nodesConnectable: typing.Optional[bool] = None,
+        elementsSelectable: typing.Optional[bool] = None,
+        showMiniMap: typing.Optional[bool] = None,
+        showControls: typing.Optional[bool] = None,
+        showBackground: typing.Optional[bool] = None,
+        nodes: typing.Optional[typing.Sequence["Nodes"]] = None,
+        edges: typing.Optional[typing.Sequence["Edges"]] = None,
+        style: typing.Optional[typing.Any] = None,
+        className: typing.Optional[str] = None,
+        showDevTools: typing.Optional[bool] = None,
+        layoutOptions: typing.Optional[str] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'className', 'edges', 'elementsSelectable', 'layoutOptions', 'nodes', 'nodesConnectable', 'nodesDraggable', 'showBackground', 'showControls', 'showDevTools', 'showMiniMap', 'style']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'className', 'edges', 'elementsSelectable', 'layoutOptions', 'nodes', 'nodesConnectable', 'nodesDraggable', 'showBackground', 'showControls', 'showDevTools', 'showMiniMap', 'style']

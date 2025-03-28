@@ -1,6 +1,13 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+import numbers # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+try:
+    from dash.development.base_component import ComponentType # noqa: F401
+except ImportError:
+    ComponentType = typing.TypeVar("ComponentType", bound=Component)
 
 
 class DevTools(Component):
@@ -32,8 +39,30 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_flows'
     _type = 'DevTools'
+    Viewport = TypedDict(
+        "Viewport",
+            {
+            "x": typing.Union[int, float, numbers.Number],
+            "y": typing.Union[int, float, numbers.Number],
+            "zoom": typing.Union[int, float, numbers.Number]
+        }
+    )
+
+    Nodes = TypedDict(
+        "Nodes",
+            {
+            "id": str,
+            "type": NotRequired[str]
+        }
+    )
+
     @_explicitize_args
-    def __init__(self, viewport=Component.REQUIRED, nodes=Component.REQUIRED, **kwargs):
+    def __init__(
+        self,
+        viewport: typing.Optional["Viewport"] = None,
+        nodes: typing.Optional[typing.Sequence["Nodes"]] = None,
+        **kwargs
+    ):
         self._prop_names = ['nodes', 'viewport']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['nodes', 'viewport']

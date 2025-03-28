@@ -3,13 +3,13 @@ module DashFlows
 using Dash
 
 const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
-const version = "0.0.3"
+const version = "0.0.4"
 
-include("jl/''_animatedcirclenode.jl")
-include("jl/''_animatednodeedge.jl")
-include("jl/''_dashflows.jl")
-include("jl/''_devtools.jl")
-include("jl/''_resizablenode.jl")
+include("jl/animatedcirclenode.jl")
+include("jl/animatednodeedge.jl")
+include("jl/dashflows.jl")
+include("jl/devtools.jl")
+include("jl/resizablenode.jl")
 
 function __init__()
     DashBase.register_package(

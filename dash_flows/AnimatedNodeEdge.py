@@ -1,6 +1,13 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+import numbers # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+try:
+    from dash.development.base_component import ComponentType # noqa: F401
+except ImportError:
+    ComponentType = typing.TypeVar("ComponentType", bound=Component)
 
 
 class AnimatedNodeEdge(Component):
@@ -41,8 +48,26 @@ Keyword arguments:
     _base_nodes = ['children']
     _namespace = 'dash_flows'
     _type = 'AnimatedNodeEdge'
+    Data = TypedDict(
+        "Data",
+            {
+            "animatedNode": NotRequired[str]
+        }
+    )
+
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, sourceX=Component.UNDEFINED, sourceY=Component.UNDEFINED, targetX=Component.UNDEFINED, targetY=Component.UNDEFINED, sourcePosition=Component.UNDEFINED, targetPosition=Component.UNDEFINED, **kwargs):
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        data: typing.Optional["Data"] = None,
+        sourceX: typing.Optional[typing.Union[int, float, numbers.Number]] = None,
+        sourceY: typing.Optional[typing.Union[int, float, numbers.Number]] = None,
+        targetX: typing.Optional[typing.Union[int, float, numbers.Number]] = None,
+        targetY: typing.Optional[typing.Union[int, float, numbers.Number]] = None,
+        sourcePosition: typing.Optional[str] = None,
+        targetPosition: typing.Optional[str] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'data', 'sourcePosition', 'sourceX', 'sourceY', 'targetPosition', 'targetX', 'targetY']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'data', 'sourcePosition', 'sourceX', 'sourceY', 'targetPosition', 'targetX', 'targetY']

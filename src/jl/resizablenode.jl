@@ -8,9 +8,20 @@ export resizablenode
 A ResizableNode component.
 
 Keyword arguments:
-- `data` (required): . data has the following type: lists containing elements 'label'.
+- `data` (required): . data has the following type: lists containing elements 'label', 'handles'.
 Those elements have the following types:
   - `label` (Bool | Real | String | Dict | Array; optional)
+  - `handles` (required): . handles has the following type: Array of lists containing elements 'id', 'type', 'position', 'style', 'isConnectable', 'isConnectableStart', 'isConnectableEnd', 'onConnect', 'isValidConnection'.
+Those elements have the following types:
+  - `id` (String; required)
+  - `type` (String; required)
+  - `position` (String; required)
+  - `style` (Dict; optional)
+  - `isConnectable` (Bool; optional)
+  - `isConnectableStart` (Bool; optional)
+  - `isConnectableEnd` (Bool; optional)
+  - `onConnect` (optional)
+  - `isValidConnection` (optional)s
 - `selected` (Bool; optional)
 """
 function resizablenode(; kwargs...)

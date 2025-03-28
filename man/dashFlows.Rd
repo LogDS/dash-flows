@@ -22,14 +22,19 @@ showMiniMap=NULL, style=NULL)
 
 \item{className}{Character. CSS class name for the container div}
 
-\item{edges}{List of lists containing elements 'id', 'source', 'target', 'type', 'data', 'style'.
+\item{edges}{List of lists containing elements 'id', 'source', 'target', 'type', 'data', 'style', 'markerend'.
 those elements have the following types:
   - id (character; required)
   - source (character; required)
   - target (character; required)
   - type (character; optional)
   - data (named list; optional)
-  - style (named list; optional)s. Array of edges defining connections between nodes}
+  - style (named list; optional)
+  - markerend (optional): . markerend has the following type: lists containing elements 'type', 'color', 'size'.
+those elements have the following types:
+  - type (character; required)
+  - color (character; optional)
+  - size (numeric; optional)s. Array of edges defining connections between nodes}
 
 \item{elementsSelectable}{Logical. Enable/disable the ability to select elements}
 
