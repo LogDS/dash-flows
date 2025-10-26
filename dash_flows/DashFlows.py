@@ -1,13 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 import typing  # noqa: F401
-import numbers # noqa: F401
 from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
-try:
-    from dash.development.base_component import ComponentType # noqa: F401
-except ImportError:
-    ComponentType = typing.TypeVar("ComponentType", bound=Component)
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class DashFlows(Component):
@@ -100,8 +108,8 @@ Keyword arguments:
     NodesPosition = TypedDict(
         "NodesPosition",
             {
-            "x": typing.Union[int, float, numbers.Number],
-            "y": typing.Union[int, float, numbers.Number]
+            "x": NumberType,
+            "y": NumberType
         }
     )
 
@@ -121,7 +129,7 @@ Keyword arguments:
             {
             "type": str,
             "color": NotRequired[str],
-            "size": NotRequired[typing.Union[int, float, numbers.Number]]
+            "size": NotRequired[NumberType]
         }
     )
 
@@ -138,7 +146,7 @@ Keyword arguments:
         }
     )
 
-    @_explicitize_args
+
     def __init__(
         self,
         id: typing.Optional[typing.Union[str, dict]] = None,
@@ -166,3 +174,5 @@ Keyword arguments:
         args = {k: _locals[k] for k in _explicit_args}
 
         super(DashFlows, self).__init__(**args)
+
+setattr(DashFlows, "__init__", _explicitize_args(DashFlows.__init__))

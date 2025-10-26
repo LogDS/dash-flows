@@ -1,0 +1,542 @@
+[
+    {
+        "id": "1",
+        "type": "resizable",
+        "data": {
+            "label": {
+                "py/object": "dash.html.Div.Div",
+                "_prop_names": [
+                    "children",
+                    "id",
+                    "accessKey",
+                    "aria-*",
+                    "className",
+                    "contentEditable",
+                    "data-*",
+                    "dir",
+                    "disable_n_clicks",
+                    "draggable",
+                    "hidden",
+                    "key",
+                    "lang",
+                    "n_clicks",
+                    "n_clicks_timestamp",
+                    "role",
+                    "spellCheck",
+                    "style",
+                    "tabIndex",
+                    "title"
+                ],
+                "_valid_wildcard_attributes": [
+                    "data-",
+                    "aria-"
+                ],
+                "available_properties": [
+                    "children",
+                    "id",
+                    "accessKey",
+                    "aria-*",
+                    "className",
+                    "contentEditable",
+                    "data-*",
+                    "dir",
+                    "disable_n_clicks",
+                    "draggable",
+                    "hidden",
+                    "key",
+                    "lang",
+                    "n_clicks",
+                    "n_clicks_timestamp",
+                    "role",
+                    "spellCheck",
+                    "style",
+                    "tabIndex",
+                    "title"
+                ],
+                "available_wildcard_properties": [
+                    "data-",
+                    "aria-"
+                ],
+                "children": [
+                    {
+                        "py/object": "dash.html.Img.Img",
+                        "_prop_names": [
+                            "children",
+                            "id",
+                            "accessKey",
+                            "alt",
+                            "aria-*",
+                            "className",
+                            "contentEditable",
+                            "crossOrigin",
+                            "data-*",
+                            "dir",
+                            "disable_n_clicks",
+                            "draggable",
+                            "height",
+                            "hidden",
+                            "key",
+                            "lang",
+                            "n_clicks",
+                            "n_clicks_timestamp",
+                            "referrerPolicy",
+                            "role",
+                            "sizes",
+                            "spellCheck",
+                            "src",
+                            "srcSet",
+                            "style",
+                            "tabIndex",
+                            "title",
+                            "useMap",
+                            "width"
+                        ],
+                        "_valid_wildcard_attributes": [
+                            "data-",
+                            "aria-"
+                        ],
+                        "available_properties": [
+                            "children",
+                            "id",
+                            "accessKey",
+                            "alt",
+                            "aria-*",
+                            "className",
+                            "contentEditable",
+                            "crossOrigin",
+                            "data-*",
+                            "dir",
+                            "disable_n_clicks",
+                            "draggable",
+                            "height",
+                            "hidden",
+                            "key",
+                            "lang",
+                            "n_clicks",
+                            "n_clicks_timestamp",
+                            "referrerPolicy",
+                            "role",
+                            "sizes",
+                            "spellCheck",
+                            "src",
+                            "srcSet",
+                            "style",
+                            "tabIndex",
+                            "title",
+                            "useMap",
+                            "width"
+                        ],
+                        "available_wildcard_properties": [
+                            "data-",
+                            "aria-"
+                        ],
+                        "children": null,
+                        "style": {
+                            "width": "100%",
+                            "height": "100%"
+                        },
+                        "src": "https://avatars.githubusercontent.com/u/120129682?v=4"
+                    }
+                ],
+                "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "alignItems": "center",
+                    "gap": "10px",
+                    "padding": "10px"
+                }
+            },
+            "handles": [
+                {
+                    "type": "target",
+                    "position": "top",
+                    "id": "handle1",
+                    "style": {
+                        "background": "#555"
+                    }
+                },
+                {
+                    "type": "source",
+                    "position": "left",
+                    "id": "handle2",
+                    "style": {
+                        "background": "#555"
+                    }
+                }
+            ]
+        },
+        "position": {
+            "x": 250,
+            "y": 25
+        },
+        "style": {
+            "width": 300,
+            "height": 300
+        }
+    },
+    {
+        "id": "2",
+        "type": "resizable",
+        "data": {
+            "label": {
+                "py/object": "dash.html.Div.Div",
+                "_prop_names": [
+                    "children",
+                    "id",
+                    "accessKey",
+                    "aria-*",
+                    "className",
+                    "contentEditable",
+                    "data-*",
+                    "dir",
+                    "disable_n_clicks",
+                    "draggable",
+                    "hidden",
+                    "key",
+                    "lang",
+                    "n_clicks",
+                    "n_clicks_timestamp",
+                    "role",
+                    "spellCheck",
+                    "style",
+                    "tabIndex",
+                    "title"
+                ],
+                "_valid_wildcard_attributes": [
+                    "data-",
+                    "aria-"
+                ],
+                "available_properties": [
+                    "children",
+                    "id",
+                    "accessKey",
+                    "aria-*",
+                    "className",
+                    "contentEditable",
+                    "data-*",
+                    "dir",
+                    "disable_n_clicks",
+                    "draggable",
+                    "hidden",
+                    "key",
+                    "lang",
+                    "n_clicks",
+                    "n_clicks_timestamp",
+                    "role",
+                    "spellCheck",
+                    "style",
+                    "tabIndex",
+                    "title"
+                ],
+                "available_wildcard_properties": [
+                    "data-",
+                    "aria-"
+                ],
+                "children": [
+                    {
+                        "py/object": "dash.html.Img.Img",
+                        "_prop_names": [
+                            "children",
+                            "id",
+                            "accessKey",
+                            "alt",
+                            "aria-*",
+                            "className",
+                            "contentEditable",
+                            "crossOrigin",
+                            "data-*",
+                            "dir",
+                            "disable_n_clicks",
+                            "draggable",
+                            "height",
+                            "hidden",
+                            "key",
+                            "lang",
+                            "n_clicks",
+                            "n_clicks_timestamp",
+                            "referrerPolicy",
+                            "role",
+                            "sizes",
+                            "spellCheck",
+                            "src",
+                            "srcSet",
+                            "style",
+                            "tabIndex",
+                            "title",
+                            "useMap",
+                            "width"
+                        ],
+                        "_valid_wildcard_attributes": [
+                            "data-",
+                            "aria-"
+                        ],
+                        "available_properties": [
+                            "children",
+                            "id",
+                            "accessKey",
+                            "alt",
+                            "aria-*",
+                            "className",
+                            "contentEditable",
+                            "crossOrigin",
+                            "data-*",
+                            "dir",
+                            "disable_n_clicks",
+                            "draggable",
+                            "height",
+                            "hidden",
+                            "key",
+                            "lang",
+                            "n_clicks",
+                            "n_clicks_timestamp",
+                            "referrerPolicy",
+                            "role",
+                            "sizes",
+                            "spellCheck",
+                            "src",
+                            "srcSet",
+                            "style",
+                            "tabIndex",
+                            "title",
+                            "useMap",
+                            "width"
+                        ],
+                        "available_wildcard_properties": [
+                            "data-",
+                            "aria-"
+                        ],
+                        "children": null,
+                        "style": {
+                            "width": "100%",
+                            "height": "100%"
+                        },
+                        "src": "https://avatars.discourse-cdn.com/v4/letter/h/50afbb/288.png"
+                    }
+                ],
+                "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "alignItems": "center",
+                    "gap": "10px",
+                    "padding": "10px"
+                }
+            },
+            "handles": [
+                {
+                    "type": "source",
+                    "position": "right",
+                    "id": "handle3",
+                    "style": {
+                        "background": "#555"
+                    }
+                },
+                {
+                    "type": "target",
+                    "position": "bottom",
+                    "id": "handle4",
+                    "style": {
+                        "background": "#555"
+                    }
+                }
+            ]
+        },
+        "position": {
+            "x": 250,
+            "y": 150
+        },
+        "style": {
+            "width": 300,
+            "height": 300
+        }
+    },
+    {
+        "id": "animated1",
+        "type": "circle",
+        "data": {
+            "label": "\ud83d\udd04"
+        },
+        "position": {
+            "x": 250,
+            "y": 150
+        },
+        "style": {
+            "width": 60,
+            "height": 60
+        }
+    },
+    {
+        "id": "3",
+        "type": "resizable",
+        "data": {
+            "label": {
+                "py/object": "dash.html.Div.Div",
+                "_prop_names": [
+                    "children",
+                    "id",
+                    "accessKey",
+                    "aria-*",
+                    "className",
+                    "contentEditable",
+                    "data-*",
+                    "dir",
+                    "disable_n_clicks",
+                    "draggable",
+                    "hidden",
+                    "key",
+                    "lang",
+                    "n_clicks",
+                    "n_clicks_timestamp",
+                    "role",
+                    "spellCheck",
+                    "style",
+                    "tabIndex",
+                    "title"
+                ],
+                "_valid_wildcard_attributes": [
+                    "data-",
+                    "aria-"
+                ],
+                "available_properties": [
+                    "children",
+                    "id",
+                    "accessKey",
+                    "aria-*",
+                    "className",
+                    "contentEditable",
+                    "data-*",
+                    "dir",
+                    "disable_n_clicks",
+                    "draggable",
+                    "hidden",
+                    "key",
+                    "lang",
+                    "n_clicks",
+                    "n_clicks_timestamp",
+                    "role",
+                    "spellCheck",
+                    "style",
+                    "tabIndex",
+                    "title"
+                ],
+                "available_wildcard_properties": [
+                    "data-",
+                    "aria-"
+                ],
+                "children": [
+                    {
+                        "py/object": "dash.html.Button.Button",
+                        "_prop_names": [
+                            "children",
+                            "id",
+                            "accessKey",
+                            "aria-*",
+                            "autoFocus",
+                            "className",
+                            "contentEditable",
+                            "data-*",
+                            "dir",
+                            "disable_n_clicks",
+                            "disabled",
+                            "draggable",
+                            "form",
+                            "formAction",
+                            "formEncType",
+                            "formMethod",
+                            "formNoValidate",
+                            "formTarget",
+                            "hidden",
+                            "key",
+                            "lang",
+                            "n_clicks",
+                            "n_clicks_timestamp",
+                            "name",
+                            "role",
+                            "spellCheck",
+                            "style",
+                            "tabIndex",
+                            "title",
+                            "type",
+                            "value"
+                        ],
+                        "_valid_wildcard_attributes": [
+                            "data-",
+                            "aria-"
+                        ],
+                        "available_properties": [
+                            "children",
+                            "id",
+                            "accessKey",
+                            "aria-*",
+                            "autoFocus",
+                            "className",
+                            "contentEditable",
+                            "data-*",
+                            "dir",
+                            "disable_n_clicks",
+                            "disabled",
+                            "draggable",
+                            "form",
+                            "formAction",
+                            "formEncType",
+                            "formMethod",
+                            "formNoValidate",
+                            "formTarget",
+                            "hidden",
+                            "key",
+                            "lang",
+                            "n_clicks",
+                            "n_clicks_timestamp",
+                            "name",
+                            "role",
+                            "spellCheck",
+                            "style",
+                            "tabIndex",
+                            "title",
+                            "type",
+                            "value"
+                        ],
+                        "available_wildcard_properties": [
+                            "data-",
+                            "aria-"
+                        ],
+                        "children": "button",
+                        "id": "btn_example"
+                    }
+                ],
+                "style": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "alignItems": "center",
+                    "gap": "10px",
+                    "padding": "10px"
+                }
+            },
+            "handles": [
+                {
+                    "type": "source",
+                    "position": "right",
+                    "id": "handle5",
+                    "style": {
+                        "background": "#555"
+                    }
+                },
+                {
+                    "type": "target",
+                    "position": "bottom",
+                    "id": "handle6",
+                    "style": {
+                        "background": "#555"
+                    }
+                }
+            ]
+        },
+        "position": {
+            "x": 600,
+            "y": 25
+        },
+        "style": {
+            "width": 300,
+            "height": 300
+        }
+    }
+]

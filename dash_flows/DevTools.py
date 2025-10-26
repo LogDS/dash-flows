@@ -1,13 +1,21 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 import typing  # noqa: F401
-import numbers # noqa: F401
 from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
-try:
-    from dash.development.base_component import ComponentType # noqa: F401
-except ImportError:
-    ComponentType = typing.TypeVar("ComponentType", bound=Component)
+
+ComponentType = typing.Union[
+    str,
+    int,
+    float,
+    Component,
+    None,
+    typing.Sequence[typing.Union[str, int, float, Component, None]],
+]
+
+NumberType = typing.Union[
+    typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+]
 
 
 class DevTools(Component):
@@ -42,9 +50,9 @@ Keyword arguments:
     Viewport = TypedDict(
         "Viewport",
             {
-            "x": typing.Union[int, float, numbers.Number],
-            "y": typing.Union[int, float, numbers.Number],
-            "zoom": typing.Union[int, float, numbers.Number]
+            "x": NumberType,
+            "y": NumberType,
+            "zoom": NumberType
         }
     )
 
@@ -56,7 +64,7 @@ Keyword arguments:
         }
     )
 
-    @_explicitize_args
+
     def __init__(
         self,
         viewport: typing.Optional["Viewport"] = None,
@@ -78,3 +86,5 @@ Keyword arguments:
                     'Required argument `' + k + '` was not specified.')
 
         super(DevTools, self).__init__(**args)
+
+setattr(DevTools, "__init__", _explicitize_args(DevTools.__init__))
