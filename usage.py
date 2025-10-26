@@ -1,10 +1,15 @@
+import json
 
+import jsonpickle
+import networkx
 from dash import html, Input, Output, ctx, State, clientside_callback, _dash_renderer, dcc
+from werkzeug.exceptions import UnsupportedMediaType
+
 from dashflow_model import Model, AppConfiguration
 
 _dash_renderer._set_react_version("18.2.0")
 
-model = Model.from_files("data/initial_nodes.json", "data/initial_edges.json")
+model = Model.from_files("data/react-flow-example.json")
 conf = AppConfiguration.from_yaml("data/app_conf.yaml")
 app = conf.init(model)
 
@@ -30,5 +35,7 @@ def Controller(ws_value, layout):
             print("pass")
     return model.read_nodes_copy(), model.read_edges_copy(), model.read_layout()
 
+
 if __name__ == "__main__":
+    # model.g.edges
     conf.run(app)
