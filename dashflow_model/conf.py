@@ -75,4 +75,4 @@ class AppConfiguration:
         return app
 
     def run(self, app):
-        app.run(debug=True, port=self.port, host=self.host)
+        app.run(debug=self.debug, port=self.port, host=self.host)
