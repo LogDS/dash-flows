@@ -53,7 +53,7 @@ class AppConfiguration:
             [
                 layout_buttons,
                 dash_flows.DashFlows(
-                    id="react-flow-example",
+                    id="View",
                     nodes=model.read_nodes_copy(),
                     edges=model.read_edges_copy(),
                     showDevTools=True,

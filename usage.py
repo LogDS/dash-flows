@@ -15,9 +15,9 @@ app = conf.init(model)
 
 
 @app.callback(
-    Output("react-flow-example", "nodes"),
-    Output("react-flow-example", "edges"),
-    Output("react-flow-example", "layoutOptions"),
+    Output("View", "nodes"),
+    Output("View", "edges"),
+    Output("View", "layoutOptions"),
     Input("ws", "msg"),
     Input("layout-config", "data"),
 suppress_callback_exceptions=True,
